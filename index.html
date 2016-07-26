@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>title here</title>
+  <script src="js/app.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div id="interface">
+    <ul>
+      <li>
+        <form>
+          <label>Number of Cells</label>
+          <input type="range" id="cellCount" min="1" max="50" step="1"
+          value="10" oninput="outputUpdate(value)" />
+          <output id="cellCountDisplay">10</output>
+        </form>
+      </li>
+      <li>
+        <form>
+          <label>Color 1</label>
+          <input type="color" id="color1" value="#ff0000">
+        </form>
+      </li>
+      <li>
+        <label>Color 1 Hop</label>
+        <input type="range" id="color1hop" min="1" max="20" step="1"
+        value="1">
+      </li>
+      <li>
+        <form>
+          <label>Color 2</label>
+          <input type="color" id="color2" value="#00ff00">
+        </form>
+      </li>
+      <li>
+        <label>Color 2 Hop</label>
+        <input type="range" id="color2hop" min="1" max="20" step="1"
+        value="1">
+      </li>
+      <li>
+        <form>
+          <label>Color 3</label>
+          <input type="color" id="color3" value="#0000ff">
+        </form>
+      </li>
+      <li>
+        <label>Color 3 Hop</label>
+        <input type="range" id="color3hop" min="1" max="20" step="1"
+        value="1"/>
+      </li>
+    </ul>
+  </div>
+
+  <div id="graph">
+    <table>
+      <tr>
+        <td>Color1</td>
+      </tr>
+      <tr>
+        <td>Color2</td>
+      </tr>
+      <tr>
+        <td>Color3</td>
+      </tr>
+    </table>
+  </div>
+
+</body>
+</html>
