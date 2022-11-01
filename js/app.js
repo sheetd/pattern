@@ -1,27 +1,37 @@
 $(document).ready(function() {
-    drawCanvas();
+  drawCanvas();
 });
 
 // Update sliders with # values
-function outputUpdate(int) {
-	document.querySelector("#cellCountDisplay").value = int;
+function outputUpdate(iStep) {
+  document.querySelector('#cellCountDisplay').value = iStep;
 }
 
+//var iStep = 100;
+var xCount = 801;
+var yCount = 101;
+
 function drawCanvas() {
-	// Draw grid lines
-	var c = document.getElementById("myCanvas");
-	var context = c.getContext("2d");
+  // Set Canvas size
+  $('#myCanvas').attr('width' , xCount);
+  $('#myCanvas').attr('height' , yCount);
 
-	for (var x = 0.5; x < 501; x += 10) {
-	  context.moveTo(x, 0);
-	  context.lineTo(x, 381);
-	}
+  // Draw grid lines
+  var c = document.getElementById('myCanvas');
+  var context = c.getContext('2d');
 
-	for (var y = 0.5; y < 381; y += 10) {
-	  context.moveTo(0, y);
-	  context.lineTo(500, y);
-	}
+  // Verticals
+  for (var x = 0.5; x < xCount; x += iStep) {
+    context.moveTo(x , 0);
+    context.lineTo(x , yCount);
+  }
 
-	context.strokeStyle = "#ddd";
-	context.stroke();
+  // Horizontals
+  for (var y = 0.5; y < yCount; y += iStep) {
+    context.moveTo(0 , y);
+    context.lineTo(xCount - 1 , y);
+  }
+
+  context.strokeStyle = '#ddd';
+  context.stroke();
 }
